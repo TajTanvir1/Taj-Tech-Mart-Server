@@ -45,7 +45,16 @@ app.get('/products', async (req,res)=>{
   res.send(result);
 })
 
-
+// Get products by search
+app.get('/product', async (req,res)=>{
+  const search = req.query.search
+  let product = {
+     productName: { $regex: `${search}`, $options: 'i' },
+   }
+  const cursor = productsCollection.find(product);
+  const result = await cursor.toArray();
+  res.send(result);
+})
 
 
 
