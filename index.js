@@ -56,7 +56,10 @@ app.get('/product', async (req,res)=>{
   res.send(result);
 })
 
-
+app.get('/productCount', async (req, res)=>{
+  const count = await productsCollection.estimatedDocumentCount();
+  res.send({ count });
+})
 
 
 
