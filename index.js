@@ -1,7 +1,7 @@
 const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
 const app = express();
+require('dotenv').config();
+const cors = require('cors');
 const port = process.env.PORT || 5000;
 
 // Middleware
@@ -9,8 +9,8 @@ app.use(cors({
    origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://taj-tech-mart.web.app/",
-      "https://taj-tech-mart.firebaseapp.com/"
+      "https://taj-tech-mart.web.app",
+      "https://taj-tech-mart.firebaseapp.com"
     ],
     credentials: true,
 }));
